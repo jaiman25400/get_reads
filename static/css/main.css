@@ -1,0 +1,136 @@
+body{
+	background-color: hsl(0, 0%, 65%);
+}
+.top{
+	background-color: hsl(0, 0%, 65%);
+
+}
+h1,h2,h3,h4,h5,h6{
+	color:hsl(0, 0%, 100%);
+}
+.drop{
+	color: aliceblue;
+	
+}
+.drop:hover{
+	color: bisque;
+
+}
+.links{
+	color:black;
+}
+.box-element{
+	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	background-color: hsl(0, 0%, 40%);
+	width: 90%;
+	border-radius: 3px;
+	padding: 10px;
+	padding-bottom: 10px ;
+}
+
+.box-element1{
+	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	background-color: hsl(0, 0%, 40%);
+	width: 100%;
+	border-radius: 3px;
+	padding: 10px;
+	padding-bottom: 10px ;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.thumbnail{
+	width: 90%;
+	height: 350px;
+	
+	/*-webkit-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+    -moz-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+    box-shadow: -1px -3px 5px -2px rgba(214,214,214,1); */
+	padding-top: 30px;
+}
+
+.product{
+	border-radius: 0 3 4px 4px;
+}
+
+.bg-dark{
+	background-color: #595959!important;
+}
+
+#cart-icon{
+	width:25px;
+	display: inline-block;
+	margin-left: 15px;
+}
+
+#cart-total{
+	display: block;
+	text-align: center;
+	color: #ec1616!important;
+	background-color: rgb(255, 255, 255);
+	width: 20px;
+	height: 25px;
+	border-radius: 50%;
+	font-size: 14px;
+}
+
+.col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{
+	margin-top: 10px;
+}
+
+.btn{
+	border-radius: 3;
+	color: #0a0a0a!important;
+	background-color: rgb(255, 255, 255);
+	
+}
+.btn:hover{
+	background-color:hsl(0, 0%, 65%)
+}
+
+.row-image{
+	width: 100px;
+}
+
+.form-field{
+	width:250px;
+	display: inline-block;
+	padding: 5px;
+}
+
+.cart-row{
+	display: flex;
+    align-items: flex-stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid  #000000!important;
+
+}
+
+.quantity{
+	display: inline-block;
+	font-weight: 700;
+	padding-right:10px;
+	
+}
+.subs{
+	margin-top: 10px;
+}
+
+.chg-quantity{
+	width: 12px;
+	cursor: pointer;
+	display: block;
+	margin-top: 5px;
+	transition:.1s;
+}
+
+.chg-quantity:hover{
+	opacity: .6;
+}
+
+.hidden{
+	display: none!important;
+}
+.notification.space-below{
+	margin-bottom: 20px;
+}

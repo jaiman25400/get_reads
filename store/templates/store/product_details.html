@@ -1,0 +1,101 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="ftco-section" style="padding-bottom: 0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mb-5 ftco-animate">
+        <a href="{{product.imageURL}}" class="image-popup"><img src="{{product.imageURL}}" class="img-fluid" alt="" /></a>
+      </div>
+      <div class="col-lg-6 product-details pl-md-5 ftco-animate align-self-center">
+        <h3>{{ product.name }}</h3>
+        <h2 class="subtitle">Stars: {% if product.get_rating == 0 %}No ratings yet{% else %}{{ product.get_rating|floatformat:1 }}{% endif %}</h2>
+        <p class="price"><span>₹{{product.price}}</span></p>
+        <p>
+          {{ product.description }}
+        </p>
+            
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h2 class="subtitle">Reviews</h2>
+
+        <div class="reviews-wrapper">
+            {% for review in product.reviews.all %}
+                <div class="notification space-below">
+                    <p>
+                      {{user}} <br>
+                        <strong>Date: </strong>{{ review.date_added|date:"Y-m-d" }},
+                        <strong>Stars: </strong>{{ review.stars }} <br>
+                    
+
+                    {{ review.content }}
+                  </p>
+                  </div>
+            {% empty %}
+                <div class="notification space-below">
+                    No reviews yet...
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="notification space-below">
+            {% if request.user.is_authenticated %}
+                <form method="post" action=".">
+                    {% csrf_token %}
+
+                    <div class="field">
+                        <label>Stars</label>
+
+                        <div clas="control">
+                            <div class="select">
+                                <select name="stars">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3" selected>3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label><h2>Write your Review</h2></label>
+
+                        <div class="control">
+                            <textarea class="textarea" name="content"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-success">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            {% else %}
+                <p>Please sign in to add review!</p>
+            {% endif %}
+        </div>
+    </div>
+
+      </div>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{message.tags}}" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+</div>
+</div>
+
+
+</section>
+
+
+{% endblock content %}
